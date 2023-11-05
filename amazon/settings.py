@@ -4,8 +4,7 @@ SPIDER_MODULES = ["amazon.spiders"]
 NEWSPIDER_MODULE = "amazon.spiders"
 
 
-
-LOG_LEVEL = 'INFO'
+LOG_LEVEL = 'DEBUG'
 # CRITICAL
 # ERROR
 # WARNING (default)
@@ -27,8 +26,6 @@ REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
 
-SELENIUM_DRIVER_NAME = "chrome"
+SELENIUM_DRIVER_NAME = "firefox"
+
 SELENIUM_DRIVER_ARGUMENTS = ["-headless"]
-
-
-

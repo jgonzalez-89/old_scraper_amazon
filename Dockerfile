@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.10
 
 WORKDIR /app
 
@@ -24,4 +24,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Comando para ejecutar tu script
-CMD ["python", "src/launcher.py"]
+CMD ["python", "launcher.py"]

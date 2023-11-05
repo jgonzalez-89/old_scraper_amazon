@@ -1,10 +1,10 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from selenium.webdriver.chrome.service import Service as ChromiumService
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.core.os_manager import ChromeType
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from selenium.webdriver.firefox.options import Options as FirefoxOptions  # Esto se ha cambiado
+from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver import Firefox
+
 from scrapy.utils.project import get_project_settings
 from scrapy.http import HtmlResponse
 from amazoncaptcha import AmazonCaptcha
@@ -19,19 +19,15 @@ class SeleniumMiddleware:
         # Obtiene las configuraciones del proyecto
         settings = get_project_settings()
 
-        # Configura las opciones del navegador
-        options = Options()
+        # Configura las opciones del navegador para Firefox
+        options = FirefoxOptions()  # Esto se ha cambiado
         for argument in settings.get("SELENIUM_DRIVER_ARGUMENTS", []):
             options.add_argument(argument)
 
-        # Decide qué tipo de Chrome utilizar en base a la configuración
-        chrome_type = ChromeType.CHROMIUM if settings.get(
-            "SELENIUM_DRIVER_NAME") == "chromium" else ChromeType.GOOGLE
+        # Configura el servicio y el navegador para Firefox
+        service = FirefoxService(executable_path=GeckoDriverManager().install())
+        self.driver = Firefox(service=service, options=options)
 
-        # Configura el servicio y el navegador
-        service = ChromiumService(ChromeDriverManager(
-            chrome_type=chrome_type).install())
-        self.driver = webdriver.Chrome(service=service, options=options)
 
     def process_request(self, request, spider):
         self.driver.get(request.url)
