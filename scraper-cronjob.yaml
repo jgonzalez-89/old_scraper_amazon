@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: scraper-cronjob
+spec:
+  schedule: "0 */6 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: scraper-amazon
+            image: old_amazon:v0.1
+            imagePullPolicy: IfNotPresent
+          - name: scraper-google
+            image: old_scraper_google:v0.0.1
+            imagePullPolicy: IfNotPresent
+          restartPolicy: OnFailure
+
+
+# kubectl apply -f <nombre-del-archivo.yaml>
