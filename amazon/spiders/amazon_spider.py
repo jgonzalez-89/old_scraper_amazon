@@ -151,32 +151,36 @@ class AmazonSpider(scrapy.Spider):
                     "ASIN": codigo_ASIN,
                 }
                 time.sleep(random.uniform(1, 3))
-
+                
+                
         except Exception as e:
-            retry_times = response.meta.get("retry_times", 0) + 1
+            self.logger.error(f"Error al procesar {response.url}: {e}")
 
-            if retry_times <= 5:  # Puedes ajustar el número máximo de intentos
-                self.logger.info(
-                    f"Reintentando {response.meta['original_url']} (intento {retry_times}) - Error: {str(e)}"
-                )
-                time.sleep(
-                    random.uniform(1, 3)
-                )  # Agrega tiempo de espera entre intentos
-                # Agrega encabezados
-                headers = {"User-Agent": generate_user_agent()}
-                yield SeleniumRequest(
-                    url=response.meta["original_url"],
-                    callback=self.parse,
-                    headers=headers,
-                    meta={
-                        "handle_httpstatus_list": [503],
-                        "dont_redirect": True,
-                        "retry_times": retry_times,
-                        "original_url": response.meta["original_url"],
-                    },
-                    dont_filter=True,  # Agrega esta línea
-                )
-                return
+        # except Exception as e:
+        #     retry_times = response.meta.get("retry_times", 0) + 1
+
+        #     if retry_times <= 5:  # Puedes ajustar el número máximo de intentos
+        #         self.logger.info(
+        #             f"Reintentando {response.meta['original_url']} (intento {retry_times}) - Error: {str(e)}"
+        #         )
+        #         time.sleep(
+        #             random.uniform(1, 3)
+        #         )  # Agrega tiempo de espera entre intentos
+        #         # Agrega encabezados
+        #         headers = {"User-Agent": generate_user_agent()}
+        #         yield SeleniumRequest(
+        #             url=response.meta["original_url"],
+        #             callback=self.parse,
+        #             headers=headers,
+        #             meta={
+        #                 "handle_httpstatus_list": [503],
+        #                 "dont_redirect": True,
+        #                 "retry_times": retry_times,
+        #                 "original_url": response.meta["original_url"],
+        #             },
+        #             dont_filter=True,  # Agrega esta línea
+        #         )
+        #         return
 
     @staticmethod
     def extract_precio(response):
