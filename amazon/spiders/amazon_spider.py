@@ -37,62 +37,62 @@ class AmazonSpider(scrapy.Spider):
                 "B00GB8V338",
                 "B00GCCQ3DI",
                 "B00GHUZDFO",
-                "B00GTW4QQ2",
-                "B00GTW4S3S",
-                "B00HUEGDZU",
-                "B00OKME7S0",
-                "B00OOUSJ0A",
-                "B00QFKIYX4",
-                "B00U1JHWR4",
-                "B00VO6BRGK",
-                "B00ZPQ129C",
-                "B011DCMQZA",
-                "B0165H0JHU",
-                "B06XSF4R1X",
-                "B06ZZ6CDY1",
-                "B073WW3KZL",
-                "B074HB44JQ",
-                "B075PLPVWF",
-                "B07661NQDH",
-                "B07BNRR82Z",
-                "B07RRBZF7T",
-                "B07ZJ82DFL",
-                "B07ZL56NS7",
-                "B07ZL6B5SS",
-                "B0813DB98Y",
-                "B08SXQTV52",
-                "B08SXSWC7Y",
-                "B015UCTS5U",
-                "B015UD5JLG",
-                "B015UDH09A",
-                "B0190MZQ34",
-                "B01DRZEK96",
-                "B01JTHDLTQ",
-                "B01MUI8JBV",
-                "B01N36O3RT",
-                "B01N5S2BHO",
-                "B01N7UYUVY",
-                "B01N9UH4T9",
-                "B01NAVYVLG",
-                "B01NB0TI00",
-                "B01NBXIKIL",
-                "B01ND3RNF9",
-                "B06XD65SNZ",
-                "B06XDGDTM9",
-                "B06Y3NHWVG",
-                "B075WD97B2",
-                "B077NF3R4W",
-                "B077NGWYRX",
-                "B07BZDZ3JM",
-                "B07BZM3HQH",
-                "B07C7KCF4W",
-                "B07KJB395Z",
-                "B07KJBL9RK",
-                "B07KJD3N8M",
-                "B07KK15DY1",
-                "B07L5Q9F49",
-                "B07Z1BWSYX",
-                "B085GK4LQF",
+                # "B00GTW4QQ2",
+                # "B00GTW4S3S",
+                # "B00HUEGDZU",
+                # "B00OKME7S0",
+                # "B00OOUSJ0A",
+                # "B00QFKIYX4",
+                # "B00U1JHWR4",
+                # "B00VO6BRGK",
+                # "B00ZPQ129C",
+                # "B011DCMQZA",
+                # "B0165H0JHU",
+                # "B06XSF4R1X",
+                # "B06ZZ6CDY1",
+                # "B073WW3KZL",
+                # "B074HB44JQ",
+                # "B075PLPVWF",
+                # "B07661NQDH",
+                # "B07BNRR82Z",
+                # "B07RRBZF7T",
+                # "B07ZJ82DFL",
+                # "B07ZL56NS7",
+                # "B07ZL6B5SS",
+                # "B0813DB98Y",
+                # "B08SXQTV52",
+                # "B08SXSWC7Y",
+                # "B015UCTS5U",
+                # "B015UD5JLG",
+                # "B015UDH09A",
+                # "B0190MZQ34",
+                # "B01DRZEK96",
+                # "B01JTHDLTQ",
+                # "B01MUI8JBV",
+                # "B01N36O3RT",
+                # "B01N5S2BHO",
+                # "B01N7UYUVY",
+                # "B01N9UH4T9",
+                # "B01NAVYVLG",
+                # "B01NB0TI00",
+                # "B01NBXIKIL",
+                # "B01ND3RNF9",
+                # "B06XD65SNZ",
+                # "B06XDGDTM9",
+                # "B06Y3NHWVG",
+                # "B075WD97B2",
+                # "B077NF3R4W",
+                # "B077NGWYRX",
+                # "B07BZDZ3JM",
+                # "B07BZM3HQH",
+                # "B07C7KCF4W",
+                # "B07KJB395Z",
+                # "B07KJBL9RK",
+                # "B07KJD3N8M",
+                # "B07KK15DY1",
+                # "B07L5Q9F49",
+                # "B07Z1BWSYX",
+                # "B085GK4LQF",
             ]
 
     def start_requests(self):
@@ -151,36 +151,32 @@ class AmazonSpider(scrapy.Spider):
                     "ASIN": codigo_ASIN,
                 }
                 time.sleep(random.uniform(1, 3))
-                
-                
+
         except Exception as e:
-            self.logger.error(f"Error al procesar {response.url}: {e}")
+            retry_times = response.meta.get("retry_times", 0) + 1
 
-        # except Exception as e:
-        #     retry_times = response.meta.get("retry_times", 0) + 1
-
-        #     if retry_times <= 5:  # Puedes ajustar el número máximo de intentos
-        #         self.logger.info(
-        #             f"Reintentando {response.meta['original_url']} (intento {retry_times}) - Error: {str(e)}"
-        #         )
-        #         time.sleep(
-        #             random.uniform(1, 3)
-        #         )  # Agrega tiempo de espera entre intentos
-        #         # Agrega encabezados
-        #         headers = {"User-Agent": generate_user_agent()}
-        #         yield SeleniumRequest(
-        #             url=response.meta["original_url"],
-        #             callback=self.parse,
-        #             headers=headers,
-        #             meta={
-        #                 "handle_httpstatus_list": [503],
-        #                 "dont_redirect": True,
-        #                 "retry_times": retry_times,
-        #                 "original_url": response.meta["original_url"],
-        #             },
-        #             dont_filter=True,  # Agrega esta línea
-        #         )
-        #         return
+            if retry_times <= 5:  # Puedes ajustar el número máximo de intentos
+                self.logger.info(
+                    f"Reintentando {response.meta['original_url']} (intento {retry_times}) - Error: {str(e)}"
+                )
+                time.sleep(
+                    random.uniform(1, 3)
+                )  # Agrega tiempo de espera entre intentos
+                # Agrega encabezados
+                headers = {"User-Agent": generate_user_agent()}
+                yield SeleniumRequest(
+                    url=response.meta["original_url"],
+                    callback=self.parse,
+                    headers=headers,
+                    meta={
+                        "handle_httpstatus_list": [503],
+                        "dont_redirect": True,
+                        "retry_times": retry_times,
+                        "original_url": response.meta["original_url"],
+                    },
+                    dont_filter=True,  # Agrega esta línea
+                )
+                return
 
     @staticmethod
     def extract_precio(response):
