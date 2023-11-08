@@ -8,3 +8,30 @@
 2023-11-08 10:34:43,959 - INFO - Archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json enviado a la API exitosamente
 2023-11-08 18:12:45,746 - INFO - Scraper amazon ejecutado exitosamente
 2023-11-08 18:12:47,470 - INFO - Archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json enviado a la API exitosamente
+2023-11-08 18:25:38,967 - ERROR - Error al enviar el archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json a la API: 500 Server Error: Internal Server Error for url: https://yixiephe4z.eu-west-1.awsapprunner.com/amazon/file/
+2023-11-08 18:25:38,967 - ERROR - Error en el proceso principal: 500 Server Error: Internal Server Error for url: https://yixiephe4z.eu-west-1.awsapprunner.com/amazon/file/
+2023-11-08 18:27:30,937 - INFO - Archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json enviado a la API exitosamente
+2023-11-08 18:29:09,347 - ERROR - Error al enviar el archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json a la API: [Errno 2] No such file or directory: '/Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json'
+2023-11-08 18:29:09,347 - ERROR - Error en el proceso principal: [Errno 2] No such file or directory: '/Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json'
+2023-11-08 18:29:34,915 - INFO - Scraper amazon ejecutado exitosamente
+2023-11-08 18:29:35,155 - INFO - Archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json enviado a la API exitosamente
+2023-11-08 18:30:17,469 - ERROR - Error al enviar el archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json a la API: [Errno 2] No such file or directory: '/Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json'
+2023-11-08 18:30:17,470 - ERROR - Error en el proceso principal: [Errno 2] No such file or directory: '/Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json'
+2023-11-08 18:35:14,793 - INFO - Scraper amazon ejecutado exitosamente
+2023-11-08 18:35:15,035 - INFO - Archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json enviado a la API exitosamente
+2023-11-08 21:39:10,184 - ERROR - Error al enviar el archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json a la API: [Errno 2] No such file or directory: '/Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json'
+2023-11-08 21:39:10,185 - ERROR - Error en el proceso principal: [Errno 2] No such file or directory: '/Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json'
+2023-11-08 21:43:48,511 - ERROR - Error al enviar el archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json a la API: [Errno 2] No such file or directory: '/Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json'
+2023-11-08 21:43:48,513 - ERROR - Error en el proceso principal: [Errno 2] No such file or directory: '/Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json'
+2023-11-08 21:46:24,193 - INFO - Scraper amazon ejecutado exitosamente
+2023-11-08 21:46:24,547 - INFO - Archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json enviado a la API exitosamente
+2023-11-08 21:48:59,683 - INFO - Scraper amazon ejecutado exitosamente
+2023-11-08 21:49:00,541 - INFO - Archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json enviado a la API exitosamente
+2023-11-08 21:51:17,496 - INFO - Scraper amazon ejecutado exitosamente
+2023-11-08 21:51:18,246 - INFO - Archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json enviado a la API exitosamente
+2023-11-08 21:52:41,461 - ERROR - Error al enviar el archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json a la API: 500 Server Error: Internal Server Error for url: https://yixiephe4z.eu-west-1.awsapprunner.com/amazon/file/
+2023-11-08 21:52:41,461 - ERROR - Error en el proceso principal: 500 Server Error: Internal Server Error for url: https://yixiephe4z.eu-west-1.awsapprunner.com/amazon/file/
+2023-11-08 21:55:26,482 - ERROR - Error al enviar el archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json a la API: [Errno 2] No such file or directory: '/Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json'
+2023-11-08 21:55:26,484 - ERROR - Error en el proceso principal: [Errno 2] No such file or directory: '/Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json'
+2023-11-08 22:01:45,530 - ERROR - Error al enviar el archivo /Users/j.gonzalez/Developer/Proyectos/Personal/old_scraper/Docker_Amazon/amazon/2023-11-08.json a la API: 500 Server Error: Internal Server Error for url: https://yixiephe4z.eu-west-1.awsapprunner.com/amazon/file/
+2023-11-08 22:01:45,532 - ERROR - Error en el proceso principal: 500 Server Error: Internal Server Error for url: https://yixiephe4z.eu-west-1.awsapprunner.com/amazon/file/
