@@ -4,6 +4,10 @@ from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver import Firefox
 
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+
 from scrapy.utils.project import get_project_settings
 from scrapy.http import HtmlResponse
 from amazoncaptcha import AmazonCaptcha
@@ -31,6 +35,14 @@ class SeleniumMiddleware:
     def process_request(self, request, spider):
         self.driver.get(request.url)
         time.sleep(2)  # Pausa para asegurar que la página ha cargado
+        
+        try:
+            WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.ID, "all-offers-display"))
+            )
+        except TimeoutException:
+            spider.logger.error("Tiempo de espera excedido para cargar el elemento")
+            return HtmlResponse(url=request.url, status=504, body=b'', request=request)
 
         while self.detect_captcha():
             # Intenta resolver el CAPTCHA

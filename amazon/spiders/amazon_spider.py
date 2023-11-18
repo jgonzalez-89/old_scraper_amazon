@@ -93,6 +93,8 @@ class AmazonSpider(scrapy.Spider):
                 "B07L5Q9F49",
                 "B07Z1BWSYX",
                 "B085GK4LQF",
+
+
             ]
 
     def start_requests(self):
@@ -116,6 +118,11 @@ class AmazonSpider(scrapy.Spider):
 
     def parse(self, response):
         try:
+
+            filename = f"debug-{datetime.datetime.now().strftime('%Y%m%d-%H%M%S')}.html"
+            with open(filename, 'w', encoding='utf-8') as f:
+                f.write(response.text)
+
             codigo_ASIN = self.extract_codigo(response.url)
             fecha = datetime.datetime.now().strftime("%d-%m-%Y")
             nombre = self.extract_nombre(response)
