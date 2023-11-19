@@ -119,7 +119,7 @@ class AmazonSpider(scrapy.Spider):
     def parse(self, response):
         try:
 
-            filename = f"debug-{datetime.datetime.now().strftime('%Y%m%d-%H%M%S')}.html"
+            filename = f"debug-spider{datetime.datetime.now().strftime('%Y%m%d-%H%M%S')}.html"
             with open(filename, 'w', encoding='utf-8') as f:
                 f.write(response.text)
 
